@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TNEA Cut-OFF Calculator</title>
+<style>
+ .mi{
+               background-color: yellow;
+               border-style: solid;
+			   border-width:10px;
+			   border-color:red;
+
+ }
+ body {
+			   background-color:#ADD8E6;
+}
+</style>
+</head>
+
+<body>
+<form>
+<br>
+<h1 style="text-align:center;">TNEA Cut-Off Calculator</h1>
+<br><br><br>
+<div class="mi" style="text-align:center; font-size:20px;">
+<label>
+Maths Mark : <br><br><input type="number" id="m" min=0 max=100></label>
+<br><br>
+<label>
+Physics Mark : <br><br><input type="number" id="p" min=0 max=100></label>
+<br><br>
+<label>
+Chemistry Mark : <br><br><input type="number" id="c" min=0 max=100></label>
+<br><br>
+<input type="button" value="CALCULATE" onclick="d();">
+<br><br>
+Your Cut-Off : <p id="ma" style="text-align:center; font-size:30px;"></p></div>
+
+</form>
+<script>
+
+function d() {
+    let m = parseInt(document.getElementById("m").value);
+    let p = parseInt(document.getElementById("p").value);
+	let c = parseInt(document.getElementById("c").value);
+	if (m!="" && p!="" && c!="" && m<=100 && p<=100 && c<=100){
+		var cut = m+(p+c)/2;
+		var man = document.getElementById("ma").innerHTML=cut;
+	}
+	else{
+		alert("KINDLY FILL ALL THE FIELDS or CHECK THE MARKS ENTERED");
+	}
+
+}
+
+</script>
+</body>
+</html>
